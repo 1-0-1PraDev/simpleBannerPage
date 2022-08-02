@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,500;1,600&family=Raleway:wght@200;300;500;600;700;800&display=swap');
+
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
+}
+
+:root{
+    --bg-clr: hsl(233deg 46% 7%);
+    --primary-clr: hsl(246deg 38% 16%);
+    --purple-clr: hsl(276deg 51% 59%);
+}
+
+body{
+    background: var(--bg-clr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+html{
+    overflow-x: hidden;
+}
+
+.container{
+    color: #fff;
+}
+
+.container .mainBx{
+    max-width: 1000px;
+    background: var(--primary-clr);
+    display: grid;
+    margin: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    box-shadow: 10px 10px 24px rgba(0, 0, 0, 0.8);
+}
+
+.container .mainBx .leftBx{
+    padding: 3.5rem;
+    min-height: 400px;  
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.container .mainBx .leftBx .heading h1{
+    margin-bottom: 1.4rem;
+}
+
+.container .mainBx .leftBx .heading p{
+    line-height: 27px;
+    font-size: 1.112rem;
+    color: rgba(255,255,255,0.3);
+    font-weight: 700;
+}
+
+.container .mainBx .leftBx .heading h1 span{
+    color: var(--purple-clr);
+}
+
+.container .mainBx .leftBx .statsBx{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.container .mainBx .leftBx .statsBx .box h3{
+    font-size: 1.3rem;
+    margin-bottom: 0.6rem;
+}
+
+.container .mainBx .leftBx .statsBx .box h4{
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    font-size: 0.8rem;
+}
+
+.container .mainBx .rightBx{
+    overflow: hidden;
+}
+
+.container .mainBx .rightBx .imgBx{
+    position: relative;
+    height: 400px;  
+    background: purple;
+}
+
+.container .mainBx .rightBx .imgBx img{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    mix-blend-mode: overlay;
+}
+
+
+@media(max-width: 900px){
+    .container .mainBx{
+        grid-template-columns: 1fr;
+        max-width: 540px;
+    }
+
+    .container .mainBx .rightBx{
+        grid-row: 1;
+    }
+
+    .container .mainBx .leftBx{
+        padding: 2.5rem;
+        text-align: center;
+    }
+
+    .container .mainBx .leftBx .statsBx{
+        grid-template-columns: 1fr;
+        grid-gap: 2.7rem;
+    }
+
+    .container .mainBx .leftBx .statsBx .box h3{
+        font-size: 1.8rem;
+    }
+    
+    .container .mainBx .leftBx .statsBx .box h4{
+        font-size: 1.2rem;
+    }
+
+}
+
+@media(max-width: 570px){
+    .container .mainBx .leftBx .heading h1{
+        font-size: 1.7rem;
+        line-height: 30px;
+    }
+}
